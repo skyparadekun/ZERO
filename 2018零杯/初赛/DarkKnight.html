@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <link rel="stylesheet" type="text/css" href="DarkKnight.css">
+        <meta content="text/html; charset=UTF-8">
+        <script>
+            window.onload = function () {
+                var oDiv = document.getElementById('Main');
+                function onMouseWheel(ev) {/*当鼠标滚轮事件发生时，执行一些操作*/
+                    var ev = ev || window.event;
+                    var obj1=document.getElementById("IMG");
+                    var obj2=document.getElementById("Content");
+                    var down = true; // 定义一个标志，当滚轮向下滚时，执行一些操作
+                        down = ev.wheelDelta?ev.wheelDelta<0:ev.detail>0;
+                    if(down){
+                        startAnimate(obj1,oDiv.clientHeight*0.101,"height");
+                        startAnimate(obj2,oDiv.clientHeight*0.101,"paddingTop");
+                    }else{
+                        startAnimate(obj1,oDiv.clientHeight*0.151,"height");
+                        startAnimate(obj2,oDiv.clientHeight*0.151,"paddingTop");
+                    }
+                    return false;
+                }
+                addEvent(oDiv,'mousewheel',onMouseWheel);
+                addEvent(oDiv,'DOMMouseScroll',onMouseWheel);
+             }
+            function addEvent(obj,xEvent,fn) {
+                if(obj.attachEvent){
+                    obj.attachEvent('on'+xEvent,fn);
+                }else{
+                    obj.addEventListener(xEvent,fn,false);
+                }
+            }
+            function startAnimate(obj, iTarget,args) {
+                iTarget=parseInt(iTarget);
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function() {
+                var oheight = parseInt(getStyle(obj, args));
+                var speed = (iTarget - oheight) * 0.1;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if (iTarget == oheight) {
+                    clearInterval(obj.timer);
+                } else {
+                    if(args=="height")
+                        obj.style.height =  oheight+ speed + 'px';
+                    if(args=="paddingTop")
+                        obj.style.paddingTop = oheight+ speed + 'px';
+                }
+                }, 3);
+            }
+            function getStyle(obj, attr) {
+                if (obj.currentStyle) {
+                return obj.currentStyle[attr];
+                } else {
+                return getComputedStyle(obj, false)[attr];
+                }
+            }
+        </script>
+    </head>
+    <body id="Main">
+        <div class="LEFT"></div>
+        <div class="RIGHT"></div>
+        <div class="TOP_IMG" id="IMG"></div>
+        <div class="CENTER" id="Content">
+            <div class="MID">
+                <div class="MID_CENTER">
+                    <div class="TITLE">
+                        <p>人杰地灵阿卡姆,<br/>民风淳朴哥谭市</p>
+                    </div>
+                    <div class="CONTENT">
+                        <p> 从亲眼目睹父母被人杀死的阴影中走出来的“蝙蝠侠”，经历了成长之后，已经不再是那个桀骜不的孤单英雄了。在警官吉姆·戈登和检查官哈维·登特的通力帮助下，“蝙蝠侠”无后顾之忧地继续满世界的奔波，与日益增长起来的犯罪威胁做着永无休止的争斗，而他所在的高谭市，也是进展最为明显的地方，犯罪率以一种惊人的速度持续下降着，毕竟对方是能够上天入地的“蝙蝠侠”，不借两个胆子谁还敢造次呢？不过像高谭这种科技与污秽并存的城市，平静是不可能维持太久的，果不其然，新一轮的混乱很快就席卷了整个城市，人们再一被被恐慌所笼罩着，而声称愿意为这一切负责的，自然就是所有混乱的源头以及支配者--“小丑”了。</p>
+                        <p>先不管“小丑”掀起一个又一个犯罪的狂潮的最终目的为何，他的企图都是邪恶的，所作所为更是早就危害到了高谭市民的正常生活……其中自然包括了“蝙蝠侠”身边几个非常重要的人，而他需要做的，就是将这股新的危机全部亲自用手捏得粉碎。然而在面对着这个有史以来最具针对性、最恶毒的对手时，“蝙蝠侠”却不得不从他的地下军械库里搬出每一件能够用得上的高科技武器，还得时刻纠结着为他曾经信仰的一切寻找答案。</p>
+                        <p> 从亲眼目睹父母被人杀死的阴影中走出来的“蝙蝠侠”，经历了成长之后，已经不再是那个桀骜不的孤单英雄了。在警官吉姆·戈登和检查官哈维·登特的通力帮助下，“蝙蝠侠”无后顾之忧地继续满世界的奔波，与日益增长起来的犯罪威胁做着永无休止的争斗，而他所在的高谭市，也是进展最为明显的地方，犯罪率以一种惊人的速度持续下降着，毕竟对方是能够上天入地的“蝙蝠侠”，不借两个胆子谁还敢造次呢？不过像高谭这种科技与污秽并存的城市，平静是不可能维持太久的，果不其然，新一轮的混乱很快就席卷了整个城市，人们再一被被恐慌所笼罩着，而声称愿意为这一切负责的，自然就是所有混乱的源头以及支配者--“小丑”了。</p>
+                        <p>先不管“小丑”掀起一个又一个犯罪的狂潮的最终目的为何，他的企图都是邪恶的，所作所为更是早就危害到了高谭市民的正常生活……其中自然包括了“蝙蝠侠”身边几个非常重要的人，而他需要做的，就是将这股新的危机全部亲自用手捏得粉碎。然而在面对着这个有史以来最具针对性、最恶毒的对手时，“蝙蝠侠”却不得不从他的地下军械库里搬出每一件能够用得上的高科技武器，还得时刻纠结着为他曾经信仰的一切寻找答案。</p>
+                        <p> 从亲眼目睹父母被人杀死的阴影中走出来的“蝙蝠侠”，经历了成长之后，已经不再是那个桀骜不的孤单英雄了。在警官吉姆·戈登和检查官哈维·登特的通力帮助下，“蝙蝠侠”无后顾之忧地继续满世界的奔波，与日益增长起来的犯罪威胁做着永无休止的争斗，而他所在的高谭市，也是进展最为明显的地方，犯罪率以一种惊人的速度持续下降着，毕竟对方是能够上天入地的“蝙蝠侠”，不借两个胆子谁还敢造次呢？不过像高谭这种科技与污秽并存的城市，平静是不可能维持太久的，果不其然，新一轮的混乱很快就席卷了整个城市，人们再一被被恐慌所笼罩着，而声称愿意为这一切负责的，自然就是所有混乱的源头以及支配者--“小丑”了。</p>
+                        <p>先不管“小丑”掀起一个又一个犯罪的狂潮的最终目的为何，他的企图都是邪恶的，所作所为更是早就危害到了高谭市民的正常生活……其中自然包括了“蝙蝠侠”身边几个非常重要的人，而他需要做的，就是将这股新的危机全部亲自用手捏得粉碎。然而在面对着这个有史以来最具针对性、最恶毒的对手时，“蝙蝠侠”却不得不从他的地下军械库里搬出每一件能够用得上的高科技武器，还得时刻纠结着为他曾经信仰的一切寻找答案。</p>
+                    </div>
+                    
+                </div>
+                <div class="LEFT_IMG"><a href="#"></a><img src="BatMan.jpg"/></div>
+                <div class="RIGHT_IMG"><a href="#"></a><img src="Joker.jpg"/></div>
+            </div>
+            
+        </div>
+    </body>
+</html>

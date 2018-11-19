@@ -1,0 +1,104 @@
+html{
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+body{
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+}
+.LEFT {
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-color: black;
+    width:19.1%;
+    height: 100%;
+}
+.RIGHT{
+    position:fixed;
+    right: 0px;
+    top:0px;
+    background-color: black;
+    width:19.1%;
+    height: 100%;
+}
+
+
+.TOP_IMG{
+    position: fixed;
+    left:19.1%;
+    height:38.2%;
+    width: 61.8%;
+    top:0%;
+    z-index: 1;
+    background-image: url(DarkKnight_title.jpg);
+    background-size: 100% 100%;
+}
+.CENTER{
+    padding-top:19.1%;
+    padding-left: 19.1%;
+    width: 61.8%;
+}
+
+.MID{
+    width: 100%;
+    background-color: white;
+}
+
+.MID_CENTER{
+    float: left;
+    width: 61.8%;
+    padding-left: 19.1%;
+    padding-bottom: 40px;
+}
+.TITLE{
+    text-anchor: middle;
+    font-size: 36px;
+    padding-top: 40px;
+}
+.TITLE p{
+    text-align: center;
+}
+.CONTENT p{
+    word-wrap:break-word; 
+    word-break:normal; 
+    text-indent: 2em;
+    font-size: 14px;
+}
+.LEFT_IMG{
+    border-left: 0;
+    float:left;
+    width: 50%;
+    height:300px;
+    overflow: hidden;
+    background-color: #ccc;
+}
+.LEFT_IMG img{
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+	transition: all 0.6s;
+}
+.LEFT_IMG img:hover{
+    z-index: 0;
+    transform: scale(1.1);
+}
+.RIGHT_IMG{
+    width: 50%;
+    height:300px;
+    float: left;
+    overflow: hidden;
+    background-color: #ccc;
+}
+.RIGHT_IMG img{
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+	transition: all 0.6s;
+}
+.RIGHT_IMG img:hover{
+    z-index: 0;
+    transform: scale(1.1);
+}
