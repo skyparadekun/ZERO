@@ -4,6 +4,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="Info.css" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery.js"></script>
+         
     </head>
     <body>
         <nav class="navba1r" role="navigation">
@@ -29,6 +30,7 @@
         <div class="footnav">
             <p>Copyright</p>
         </div>
+        <div class="TOP"></div>
         <div class="Info">
             <div class="IMG">
             </div>
@@ -45,5 +47,41 @@
                 <p>IMDb链接: tt0133093</p>
             </div>
         </div>
+        <div class="TOP"></div>
+        <div class="group" id="Main">
+        <script typescripttype="text/javascript"> 
+            function createElement(u,t,is){  
+                var createDiv=document.createElement("div");   
+                createDiv.className="c1";
+                createDiv.id="c1"
+                var c1=document.getElementById("c1");
+                var Com=document.createElement("img");
+                Com.className="Comment";
+                Com.id="Comment";
+                Com.src=u;
+                var text=document.createElement("div");
+                text.className="Title";
+                text.id="Title";
+                var TEXT=document.createElement("p");
+                TEXT.innerHTML=t;
+                text.appendChild(TEXT);
+                if(is>5)
+                {createDiv.appendChild(text);createDiv.appendChild(Com);}
+                else{createDiv.appendChild(Com);createDiv.appendChild(text);}
+                document.getElementById("Main").appendChild(createDiv);
+            }
+            var length=3;
+            var us=["BatMan.jpg","Joker.jpg","BatMan.jpg"];
+            var texts=["BatMan","Joker","BatMan"];
+            function createComment(){
+                for(var i=0;i<length;i++){
+                    createElement(us[i],texts[i],i%4);
+                }
+            }
+            window.onload =createComment();  
+        </script>
+        </div>
+        <div class="BOTTUM"></div>
     </body>
+    
 </html>

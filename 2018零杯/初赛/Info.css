@@ -60,13 +60,18 @@ button:focus{
     float: right;
 }
 
-
-
+.TOP{
+    height:11.1%;
+    width: 100%;
+}
+.BOTTUM{
+    height:10.1%;
+    width: 100%;
+}
 /*Page Content*/
 .Info{
     width:51.8%;
     height:66.8%;
-    margin-top: 6%;
     margin-left: 24.1%;
     background-color: #303139;
 }
@@ -93,3 +98,26 @@ button:focus{
     word-break:normal; 
 }
 
+
+#Main{
+    width:80%;
+    margin-left: 10%;
+}
+.c1{
+    float: left;
+    width:50%;
+}
+.Comment{
+    width:100%;
+}
+.Title{
+    width:100%;
+    background-color:silver;
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+.Title p{
+    padding-top:3%;
+    text-align: center;
+}
