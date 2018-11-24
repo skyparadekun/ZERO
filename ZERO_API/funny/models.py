@@ -14,7 +14,6 @@ class Movie(models.Model):
     country = models.CharField(max_length=20)
     language = models.CharField(max_length=15)
     IMDb = models.CharField(max_length=15)
-    
 
 class Article(models.Model):
     title = models.CharField(max_length=40,blank=False)
@@ -23,11 +22,6 @@ class Article(models.Model):
     star = models.IntegerField(default=0)
     auther = models.ForeignKey(User,on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
-
-class userProfile(models.Model):
-    email = models.EmailField()
-    phone = models.CharField(max_length=20,blank=True)
-    user = models.OneToOneField(User)
 
 class Comment(model.Model):
     lastTime = models.DateTimeField(auto_now=True)
