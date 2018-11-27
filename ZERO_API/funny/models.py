@@ -9,11 +9,14 @@ class Movie(models.Model):
     producer = models.CharField(max_length=20)
     actor = models.CharField(max_length=40)
     kind = models.CharField(max_length=20)
-    lastTime = models.TimeField()
+    lastTime = models.DateTimeField()
     length = models.IntegerField()
     country = models.CharField(max_length=20)
     language = models.CharField(max_length=15)
     IMDb = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.name
 
 class Article(models.Model):
     title = models.CharField(max_length=40,blank=False)
@@ -22,9 +25,15 @@ class Article(models.Model):
     star = models.IntegerField(default=0)
     auther = models.ForeignKey(User,on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.title
 
-class Comment(model.Model):
+class Comment(models.Model):
     lastTime = models.DateTimeField(auto_now=True)
     text = models.CharField(max_length=999,blank=False)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     article = models.ForeignKey(Article,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username+" "+self.text[0:7]
